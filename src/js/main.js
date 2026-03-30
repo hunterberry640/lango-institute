@@ -158,4 +158,49 @@
       }, 5000);
     });
   }
+
+  // ── Lightbox ─────────────────────────────────────────────────
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.gallery__item img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      openLightbox(img.src, img.alt);
+    });
+  });
+
+  document.querySelectorAll('.trip-card img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(img.src, img.alt);
+    });
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
 })();
