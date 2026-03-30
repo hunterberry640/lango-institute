@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LanGo Institute — Language Learning on the Go</title>
+  <meta name="description" content="LanGo Institute offers group classes, private lessons, workshops and cultural immersion programs in Spanish, Korean, Japanese, Mandarin, French, German and more. Dallas, TX." />
+  <link rel="icon" type="image/jpeg" href="./src/assets/LanGo_favicon_RGB_orange.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+<body>
+
+  <!-- ═══ STICKY TOP BAR ═══ -->
+  <div class="top-bar" id="topBar">
+    <div class="top-bar__inner">
+      <span>Spring II starts <strong>March 23rd</strong> &mdash; Group classes from <strong>~$21/hr</strong></span>
+      <a href="./contact.html" class="top-bar__cta">Register Now &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="./" class="navbar__brand">
+        <img src="./src/assets/lango-logo.webp" alt="LanGo Institute" class="navbar__logo" />
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="./contact.html">About Us</a>
+        <a href="./contact.html">Programs</a>
+        <a href="./contact.html">Schedule</a>
+        <a href="./contact.html">Register</a>
+        <a href="./contact.html">Blog</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="./src/assets/LanGo_background_image.avif" alt="" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Dallas, TX &mdash; Est. 2018</p>
+      <h1 class="hero__headline">
+        <span class="hero__line">Speak Fluently,</span>
+        <span class="hero__line">Connect Globally</span>
+      </h1>
+      <p class="hero__sub">Group classes from ~$21/hr. Private lessons from $50/hr. 10+ languages. Join hundreds of learners in Dallas and online.</p>
+      <div class="hero__actions">
+        <a href="./contact.html" class="btn btn--primary">View Programs</a>
+        <a href="./contact.html" class="btn btn--outline">Register Now</a>
+      </div>
+    </div>
+
+    <div class="hero__logo-badge">
+      <img src="./src/assets/LanGo_favicon_RGB_orange.jpg" alt="LanGo" />
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats">
+    <div class="stats__inner">
+      <div class="stat">
+        <span class="stat__number" data-target="10">0</span><span class="stat__plus">+</span>
+        <span class="stat__label">Languages Taught</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number" data-target="6">0</span><span class="stat__plus">+</span>
+        <span class="stat__label">Years of Excellence</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number" data-target="20">0</span><span class="stat__plus">+</span>
+        <span class="stat__label">Expert Instructors</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number" data-target="5">0</span>
+        <span class="stat__label">Immersion Trips</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WELCOME ═══ -->
+  <section class="welcome" id="welcome">
+    <div class="welcome__inner">
+      <div class="welcome__text">
+        <p class="section-eyebrow">Welcome to</p>
+        <h2 class="section-heading">LanGo Institute</h2>
+        <p class="welcome__tagline">language learning on the go</p>
+        <p>LanGo Institute is a language education center in Dallas, Texas dedicated to making language learning effective, enjoyable, and rooted in real linguistic science. We offer group classes, private lessons, corporate training, workshops, and international immersion trips in Spanish, Korean, Japanese, Mandarin, French, German, Portuguese, and more.</p>
+        <a href="./contact.html" class="btn btn--primary" style="margin-top:1.5rem">Learn More</a>
+      </div>
+      <div class="welcome__image">
+        <img src="./downloaded-assets/langoinstitute.com/_root/fullsizeoutput_5d95.jpeg" alt="LanGo classroom" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROGRAMS ═══ -->
+  <section class="programs" id="programs">
+    <div class="programs__inner">
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="section-heading">Our Programs</h2>
+      <div class="programs__grid">
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3>Group Classes</h3>
+          <span class="program-card__price">~$21/hr</span>
+          <p>Small, interactive classes in 10+ languages. 9-week sessions, max 8 students, all levels. $375/session.</p>
+        </a>
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3>Private Lessons</h3>
+          <span class="program-card__price">From $50/hr</span>
+          <p>1-on-1 instruction tailored to your goals. Flexible scheduling, on-site or online. Try a 1-hour trial lesson.</p>
+        </a>
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3>Workshops</h3>
+          <span class="program-card__price">2-hr sessions</span>
+          <p>No experience needed. Learn the basics quickly in small groups of 4&ndash;8 students. Perfect first step.</p>
+        </a>
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Immersion Trips</h3>
+          <span class="program-card__price">From $2,750</span>
+          <p>Travel with LanGo to Spain, South Korea, Japan, Mexico and beyond for hands-on cultural immersion.</p>
+        </a>
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3>Corporate Classes</h3>
+          <span class="program-card__price">Custom pricing</span>
+          <p>Language training for teams at companies like Mitsubishi, McAfee, and Sherwin-Williams.</p>
+        </a>
+        <a href="./contact.html" class="program-card">
+          <div class="program-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3>Programa de Inglés</h3>
+          <span class="program-card__price">~$21/hr</span>
+          <p>Clases de inglés para hispanohablantes con apoyo bilingüe e instrucción culturalmente adaptada.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LANGO ABROAD ═══ -->
+  <section class="abroad" id="abroad">
+    <div class="abroad__inner">
+      <p class="section-eyebrow">LanGo Abroad</p>
+      <h2 class="section-heading">Learn a Language. Then Live It.</h2>
+      <p class="abroad__subtitle">Travel with LanGo for immersive language and culture experiences. Daily lessons, food tours, historic sites, and lifelong memories.</p>
+      <div class="abroad__grid">
+        <a href="./contact.html" class="trip-card trip-card--featured">
+          <img src="./src/assets/oaxaca_small.webp" alt="Oaxaca, Mexico" loading="lazy" />
+          <div class="trip-card__overlay"></div>
+          <div class="trip-card__badge">Now Enrolling</div>
+          <div class="trip-card__content">
+            <span class="trip-card__destination">Oaxaca, Mexico</span>
+            <span class="trip-card__dates">March 16&ndash;22, 2026 &bull; 7 days</span>
+            <span class="trip-card__price">$2,750 <small>all-inclusive</small></span>
+            <span class="trip-card__scarcity">Only 10 spots &mdash; limited availability</span>
+          </div>
+        </a>
+        <a href="./contact.html" class="trip-card">
+          <img src="./downloaded-assets/langoinstitute.com/_root/image-asset_26.jpeg" alt="Spain" loading="lazy" />
+          <div class="trip-card__overlay"></div>
+          <div class="trip-card__content">
+            <span class="trip-card__destination">Spain</span>
+            <span class="trip-card__dates">Madrid &bull; Barcelona &bull; Toledo</span>
+            <span class="trip-card__price">Past trip</span>
+          </div>
+        </a>
+        <a href="./contact.html" class="trip-card">
+          <img src="./src/assets/korea.webp" alt="South Korea" loading="lazy" />
+          <div class="trip-card__overlay"></div>
+          <div class="trip-card__content">
+            <span class="trip-card__destination">South Korea</span>
+            <span class="trip-card__dates">Seoul &bull; Busan &bull; Gyeongju &bull; Jeju</span>
+            <span class="trip-card__price">Past trip</span>
+          </div>
+        </a>
+        <a href="./contact.html" class="trip-card">
+          <img src="./src/assets/japan_small.webp" alt="Japan" loading="lazy" />
+          <div class="trip-card__overlay"></div>
+          <div class="trip-card__content">
+            <span class="trip-card__destination">Japan</span>
+            <span class="trip-card__dates">Tokyo &bull; Kyoto</span>
+            <span class="trip-card__price">Past trip</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SESSION CTA ═══ -->
+  <section class="session-cta">
+    <div class="session-cta__inner">
+      <div class="session-cta__text">
+        <p class="section-eyebrow">Enroll Now</p>
+        <h2 class="section-heading" style="color:#fff">Spring II Session</h2>
+        <p class="session-cta__dates">March 23rd &mdash; May 24th, 2026</p>
+        <p class="session-cta__next">Summer Session: June 1st &ndash; August 2nd, 2026</p>
+        <div class="session-cta__actions">
+          <a href="./contact.html" class="btn btn--primary">Register</a>
+          <a href="./contact.html" class="btn btn--outline btn--outline-light">Schedule of Classes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LINGUISTICKY ═══ -->
+  <section class="linguisticky">
+    <div class="linguisticky__inner">
+      <div class="linguisticky__image">
+        <img src="./downloaded-assets/langoinstitute.com/_root/linguisticky-screenshot.png" alt="Linguistics for language learning" loading="lazy" />
+      </div>
+      <div class="linguisticky__text">
+        <p class="section-eyebrow">Our Approach</p>
+        <h2 class="section-heading">Let's get <em>linguisticky.</em></h2>
+        <p>At LanGo, we don't just teach you phrases — we teach you how language works. Our workshops give you real linguistic tools to make your language learning more effective, more insightful, and a whole lot more fun.</p>
+        <p>From phonetics to morphology to syntax, you'll learn the science that powers fluency.</p>
+        <a href="./contact.html" class="btn btn--primary" style="margin-top:1.5rem">Explore Workshops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials__inner">
+      <p class="section-eyebrow">Student Stories</p>
+      <h2 class="section-heading">Meet Our LanGOATs</h2>
+      <div class="testimonials__track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/Ashley.jpg" alt="Ashley" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;I can order food in Korean and have short exchanges with people at the store. I also like watching K-dramas and can understand basic conversations on TV.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Ashley Lewis</strong>
+            <span>Learning Korean</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/Dalton.jpg" alt="Dalton" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;Tyler creates lessons for me every week that cater to my needs. Having a place to go for 1-on-1 class with an instructor is the best thing I can ask for.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Dalton Smith</strong>
+            <span>Learning Japanese</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/Charity_DeadHorsePointpic.jpg" alt="Charity" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;You wouldn't have heard me singing along to songs in Spanish a few years ago. Look out, Julio Iglesias.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Charity Crawford</strong>
+            <span>Learning Spanish</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/Bo.jpg" alt="Bo" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;I can see my improvement and I'm confident in my future learning results. The conversation hours and social events add so much variety.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Bo Wang</strong>
+            <span>Learning English</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/caleb.jpg" alt="Caleb" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;LanGo took me from reciting some words and phrases to understanding how to use the language to truly speak Chinese.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Caleb Diaz</strong>
+            <span>Learning Mandarin</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__photo">
+            <img src="./downloaded-assets/langoinstitute.com/meet-our-students/Maddie.jpg" alt="Madeline" loading="lazy" />
+          </div>
+          <blockquote>&ldquo;LanGo has helped me come out of my shell. Speaking the language out loud with no script can be scary, but they make it feel safe.&rdquo;</blockquote>
+          <div class="testimonial-card__info">
+            <strong>Madeline Lopez</strong>
+            <span>Learning Korean</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials__nav">
+        <button class="testimonials__btn" id="testPrev" aria-label="Previous">&larr;</button>
+        <button class="testimonials__btn" id="testNext" aria-label="Next">&rarr;</button>
+      </div>
+      <a href="./contact.html" class="btn btn--primary testimonials__cta">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ═══ CORPORATE LOGOS ═══ -->
+  <section class="logos">
+    <div class="logos__inner">
+      <p class="logos__label">Trusted by teams at</p>
+      <div class="logos__strip">
+        <img src="./src/assets/mitsubishi-1-logo-png-transparent.png" alt="Mitsubishi" class="logos__img-logo" />
+        <img src="./src/assets/mcafee.png" alt="McAfee" class="logos__img-logo" />
+        <img src="./src/assets/sherwin.png" alt="Sherwin-Williams" class="logos__img-logo logos__img-logo--lg" />
+        <img src="./src/assets/yum (2).png" alt="Yum! Brands" class="logos__img-logo logos__img-logo--lg" />
+        <img src="./src/assets/diamond.png" alt="DIA Realty" class="logos__img-logo logos__img-logo--lg" />
+        <img src="./src/assets/JP.png" alt="JP Logistics" class="logos__img-logo logos__img-logo--lg" />
+        <img src="./src/assets/munters-logo.png" alt="Munters" class="logos__img-logo" />
+        <img src="./src/assets/IRC.webp" alt="IRC" class="logos__img-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__inner">
+      <p class="section-eyebrow">Life at LanGo</p>
+      <h2 class="section-heading">Our Community</h2>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide">
+          <img src="./downloaded-assets/langoinstitute.com/_root/slideshow1.jpeg" alt="LanGo classroom" loading="lazy" />
+        </div>
+        <div class="gallery__item">
+          <img src="./downloaded-assets/langoinstitute.com/_root/image-asset_11.jpeg" alt="Cultural event" loading="lazy" />
+        </div>
+        <div class="gallery__item">
+          <img src="./downloaded-assets/langoinstitute.com/_root/slideshow3.jpeg" alt="Students learning" loading="lazy" />
+        </div>
+        <div class="gallery__item gallery__item--tall">
+          <img src="./downloaded-assets/langoinstitute.com/_root/image-asset_26.jpeg" alt="Immersion trip" loading="lazy" />
+        </div>
+        <div class="gallery__item">
+          <img src="./downloaded-assets/langoinstitute.com/_root/slideshow5.jpeg" alt="Workshop" loading="lazy" />
+        </div>
+        <div class="gallery__item">
+          <img src="./downloaded-assets/langoinstitute.com/_root/image-asset_23.jpeg" alt="LanGo event" loading="lazy" />
+        </div>
+        <div class="gallery__item gallery__item--wide">
+          <img src="./downloaded-assets/langoinstitute.com/_root/slideshow6.jpeg" alt="Group learning" loading="lazy" />
+        </div>
+        <div class="gallery__item">
+          <img src="./downloaded-assets/langoinstitute.com/_root/image-asset_28.jpeg" alt="Cultural activity" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FREE EVENTS ═══ -->
+  <section class="free-events">
+    <div class="free-events__inner">
+      <div class="free-events__text">
+        <p class="section-eyebrow">Come Hang Out First</p>
+        <h2 class="section-heading">Not Ready to Commit?</h2>
+        <p>Join our free monthly events and meet the LanGo community before signing up for classes. No pressure, just good vibes and language practice.</p>
+      </div>
+      <div class="free-events__grid">
+        <div class="free-event">
+          <div class="free-event__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h4>Language Exchanges</h4>
+          <p>Teach your native language, learn someone else's. Free monthly meetups through our Meetup group.</p>
+        </div>
+        <div class="free-event">
+          <div class="free-event__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4>LanGoings On</h4>
+          <p>Conversation hours, cooking workshops, game &amp; movie nights, book clubs &mdash; practice in a social setting.</p>
+        </div>
+        <div class="free-event">
+          <div class="free-event__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          </div>
+          <h4>Language Lounge</h4>
+          <p>Drop by our lounge for coffee, wifi, great music, and conversation practice with fellow language lovers.</p>
+        </div>
+      </div>
+      <a href="./contact.html" class="btn btn--primary" style="margin-top:2rem">Find Upcoming Events</a>
+    </div>
+  </section>
+
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="newsletter">
+    <div class="newsletter__inner">
+      <h2 class="section-heading">Don't miss out!</h2>
+      <p>Sign up for our email newsletter for special offers and info about upcoming events and programs.</p>
+      <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('.newsletter__thanks').style.display='block'; this.querySelector('button').disabled=true;">
+        <div class="newsletter__fields">
+          <input type="text" placeholder="First Name" required />
+          <input type="text" placeholder="Last Name" required />
+          <input type="email" placeholder="Email Address" required />
+        </div>
+        <button type="submit" class="btn btn--primary">Sign Up</button>
+        <p class="newsletter__thanks" style="display:none">Thank you for subscribing!</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="./src/assets/lango-logo.webp" alt="LanGo Institute" class="footer__logo" />
+        <p class="footer__tagline">language learning on the go</p>
+      </div>
+      <div class="footer__links">
+        <h4>Programs</h4>
+        <a href="./contact.html">Group Classes</a>
+        <a href="./contact.html">Private Lessons</a>
+        <a href="./contact.html">Workshops</a>
+        <a href="./contact.html">Corporate Classes</a>
+      </div>
+      <div class="footer__links">
+        <h4>Resources</h4>
+        <a href="./contact.html">Blog</a>
+        <a href="./contact.html">Books</a>
+        <a href="./contact.html">Podcast</a>
+        <a href="./contact.html">FAQ</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="./contact.html">Contact</a>
+        <a href="./contact.html">Schedule</a>
+        <a href="./contact.html">Register</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Copyright 2026 &copy; LanGo Institute</p>
+      <p>11346 Emerald St. Dallas, TX 75229 &bull; (469) 888-9150</p>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

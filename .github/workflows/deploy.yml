@@ -1,0 +1,113 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION || 'us-east-1' }}
+  TF_VAR_aws_account_id: ${{ secrets.AWS_ACCOUNT_ID }}
+  TF_VAR_aws_region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+  TF_VAR_domain_name: ${{ secrets.DOMAIN_NAME }}
+
+jobs:
+  deploy:
+    name: Terraform + Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Verify AWS Account
+        run: |
+          ACTUAL=$(aws sts get-caller-identity --query Account --output text)
+          EXPECTED="${{ secrets.AWS_ACCOUNT_ID }}"
+          if [ "$ACTUAL" != "$EXPECTED" ]; then
+            echo "::error::WRONG AWS ACCOUNT! Expected $EXPECTED but got $ACTUAL. Check your GitHub secrets."
+            exit 1
+          fi
+          echo "Confirmed: deploying to account $ACTUAL"
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Ensure Terraform state bucket exists
+        run: |
+          DOMAIN_DASHED=$(echo "${{ secrets.DOMAIN_NAME }}" | tr '.' '-')
+          STATE_BUCKET="${DOMAIN_DASHED}-tf-state-${{ secrets.AWS_ACCOUNT_ID }}"
+          if ! aws s3api head-bucket --bucket "$STATE_BUCKET" 2>/dev/null; then
+            echo "Creating Terraform state bucket: $STATE_BUCKET"
+            if [ "${{ env.AWS_REGION }}" = "us-east-1" ]; then
+              aws s3api create-bucket --bucket "$STATE_BUCKET" --region "${{ env.AWS_REGION }}"
+            else
+              aws s3api create-bucket --bucket "$STATE_BUCKET" --region "${{ env.AWS_REGION }}" \
+                --create-bucket-configuration LocationConstraint="${{ env.AWS_REGION }}"
+            fi
+            aws s3api put-bucket-versioning --bucket "$STATE_BUCKET" \
+              --versioning-configuration Status=Enabled
+            echo "State bucket created with versioning enabled."
+          fi
+          echo "STATE_BUCKET=$STATE_BUCKET" >> "$GITHUB_ENV"
+
+      - name: Terraform Init
+        working-directory: infra
+        run: |
+          terraform init \
+            -backend-config="bucket=${STATE_BUCKET}" \
+            -backend-config="key=site/terraform.tfstate" \
+            -backend-config="region=${{ env.AWS_REGION }}"
+
+      - name: Terraform Apply
+        working-directory: infra
+        run: terraform apply -auto-approve
+
+      - name: Get Terraform Outputs
+        id: tf
+        working-directory: infra
+        run: |
+          echo "bucket=$(terraform output -raw s3_bucket_name)" >> "$GITHUB_OUTPUT"
+          echo "dist_id=$(terraform output -raw cloudfront_distribution_id)" >> "$GITHUB_OUTPUT"
+
+      - name: Sync site files to S3
+        run: |
+          aws s3 sync . "s3://${{ steps.tf.outputs.bucket }}" \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".cursor/*" \
+            --exclude "node_modules/*" \
+            --exclude "infra/*" \
+            --exclude "deploy.sh" \
+            --exclude ".gitignore" \
+            --exclude "*.md" \
+            --exclude "package.json" \
+            --exclude "package-lock.json" \
+            --exclude "vite.config.js" \
+            --exclude ".nojekyll" \
+            --exclude "CNAME" \
+            --cache-control "public, max-age=86400"
+
+      - name: Set HTML cache headers
+        run: |
+          aws s3 cp "s3://${{ steps.tf.outputs.bucket }}" "s3://${{ steps.tf.outputs.bucket }}" \
+            --recursive \
+            --exclude "*" \
+            --include "*.html" \
+            --metadata-directive REPLACE \
+            --cache-control "public, max-age=300" \
+            --content-type "text/html"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ steps.tf.outputs.dist_id }}" \
+            --paths "/*" \
+            --no-cli-pager
